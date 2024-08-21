@@ -1,50 +1,35 @@
 #include <iostream>
 #include <vector>
 
-
-template <typename Conteiner>
-void RingBuffer(Conteiner& cont, int n) {
-
-    for (int i = 0; i < cont.size() - 1; ++i) 
-        cont[i] = cont [i + 1];
-    
-    cont[cont.size() - 1] = n;
-     
-}
+int BUFFER_SIZE = 20;
+int COUNTER = 0;
+std::vector<int> DB(BUFFER_SIZE);
 
 
-template <typename Conteiner>
-void PrintConteiner(Conteiner conteiner) {
-    
-    for(auto i : conteiner) 
-        std::cout<<i<<"  ";
-    
-    std::cout<<"\n";     
-}
+template <typename Term> 
+void InsertRingBuffer(Term term); 
 
-
+void PrintRingBuffer();
 
 
 int main() {
     
-   std::vector<int> db(20);
-   std::cout<<"To exit the program, the number is -2\n";
-   std::cout<<"To output the container, the number is -1\n";
+    std::cout<<"To exit the program, the number is -2\n";
+    std::cout<<"To output the container, the number is -1\n";
     
     for(;;) {
         int n;
         std::cout<<"input number: ";
         std::cin>>n; 
+
             if (n == - 2) {
                 std::cout<<"\nThe work of the program is completed!";
                 return 0;
             } 
-            else if (n == -1) {
-                std::cout<<"output: ";
-                PrintConteiner(db);
-            } else {
-                RingBuffer(db, n);
-            }
+            else if (n == -1) PrintRingBuffer();
+            else InsertRingBuffer(n);
+            
+
     }
 
     return 1;
@@ -53,3 +38,25 @@ int main() {
 
 
 
+void PrintRingBuffer() {
+
+    std::cout<<"output: ";
+
+    for(int i = COUNTER; i < DB.size(); ++i) 
+            std::cout<<DB[i]<<"  ";
+            
+    for(int i = 0; i < COUNTER; ++i) 
+            std::cout<<DB[i]<<"  "; 
+    
+    std::cout<<"\n";     
+}
+
+
+template <typename Term>
+void InsertRingBuffer(Term term) {
+
+    COUNTER = COUNTER < BUFFER_SIZE ? COUNTER  : 0; 
+    DB[COUNTER] = term;
+    ++COUNTER;
+     
+}
