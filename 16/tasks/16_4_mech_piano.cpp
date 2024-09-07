@@ -12,42 +12,45 @@ enum NOTE {
 
 std::string DecimalToBin(int n);
 
-void PrintingDigitsInBinary(int accord, int note, int notes); 
-
 void SingingNotes(int notes); 
 
 
               
 int main() {
 
-    int accord, notes = 0;
-    std::cout<<"Enter the accord number: ";
-    std::cin>>accord;
-    
-    if (accord & NOTE::DO) notes |= NOTE::DO;
-    PrintingDigitsInBinary(accord, NOTE::DO, notes); 
+    int notes = 0;
+    int accord, mask;
+    bool number;
 
-    if (accord & NOTE::RE) notes |= NOTE::RE;
-    PrintingDigitsInBinary(accord, NOTE::RE, notes);
-    
-    if (accord & NOTE::MI) notes |= NOTE::MI;
-    PrintingDigitsInBinary(accord, NOTE::MI, notes); 
+    do {
+        number = true;
+        std::cout<<"Enter the accord number containing the digits from 1 to 7\n";
+        std::cin>>accord;
 
-    if (accord & NOTE::FA) notes |= NOTE::FA;
-    PrintingDigitsInBinary(accord, NOTE::FA, notes);
+        if (accord < 0) {
+            std::cout<<"An incorrect number was entered\n";
+            number = false;
+            continue;
+        }
 
-    if (accord & NOTE::SOL) notes |= NOTE::SOL;
-    PrintingDigitsInBinary(accord, NOTE::SOL, notes);
+        while (accord > 0) {
+            int n = accord % 10;
+            if (n == 0 || n > 7) {
+                std::cout<<"The accord contains incorrect numbers\n";
+                number = false;
+                break;    
+            }
+            mask = 1 << (n - 1);
+            notes |= mask;
+            std::cout<<n<<"  bitwise shift: 1/"<<(n - 1)<<" "<<"  mask: "
+            <<DecimalToBin(mask) <<"   notes: "<<DecimalToBin(notes)<<"\n";
+            accord/=10;    
+        }
 
-    if (accord & NOTE::LA) notes |= NOTE::LA;
-    PrintingDigitsInBinary(accord, NOTE::LA, notes);
+    } while (!number); 
 
-    if (accord & NOTE::SI) notes |= NOTE::SI;
-    PrintingDigitsInBinary(accord, NOTE::SI, notes);
+    SingingNotes(notes);
   
-   
-    SingingNotes(notes); 
-   
     return 0;
 }
 
@@ -87,13 +90,3 @@ std::string DecimalToBin(int n) {
     return bin;
 
 }
-
-void PrintingDigitsInBinary(int accord, int note, int notes) {
-
-    std::cout<<"accord: "<<accord<<"  "<<DecimalToBin(accord)
-    <<"  note: "<<note<<"  "<<DecimalToBin(note) 
-    <<"  notes: "<<notes<<"  "<<DecimalToBin(notes)<<"\n\n";
-          
-}
-
-
