@@ -4,13 +4,12 @@
 
 int main() {
 
-    int input;
-    int size_buffer = 1000;
-    
+    int size_buffer = 500;
+    char buffer[size_buffer];
     std::string path;
     std::cout<<"Enter the path to the file:\n";
     std::cin>>path;
-    //path = "C:\\pract_exercises\\19\\tasks\\19_2\\The_Hound_of_the_Baskervilles.txt";
+    //path = "The_Hound_of_the_Baskervilles.txt";
         
     std::ifstream book;
     book.open(path);
@@ -20,11 +19,24 @@ int main() {
         return 1;    
     }
 
-    while (std::cin>>input && !book.eof()) {
-        char buffer[size_buffer];
+         
+    int counter = 0;
+    
+    while (!book.eof()) {
         book.read(buffer, sizeof(buffer)-1);
-        std::cout<<buffer<<"\n";    
+        buffer[book.gcount()] = 0;
+        std::cout<<buffer;
+        ++counter;
+
+        if(counter == 2) { 
+            counter = 0;
+            std::cout<<"\n";
+            system("pause");
+            system("cls");
+        }
+
     }
+
 
     book.close();
        
