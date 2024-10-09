@@ -23,7 +23,9 @@ void CalculateTotalSum();
 
 void CalculateNumberBills();
 
-void WriteFile(std::ofstream & atm_out); 
+void ReadFile(std::ifstream& atm);
+
+void WriteFile(std::ofstream& atm); 
 
 void GetStatusATM(); 
 
@@ -33,32 +35,21 @@ void FillATM();
 
 int main() {
 
-    srand(time(nullptr));
     std::string path = "atm.bin";
-    std::ifstream atm_in(path, std::ios::binary);
+    srand(time(nullptr));
+    std::ifstream atm_in(path);
 
-    if (!atm_in.is_open()) {
-        std::cout<<"The ATM is not working";
-        return 1;
-    }
-
-    std::cout<<"Current status of the ATM:\n";
-
-    int bill, count;
-    while (!atm_in.eof()) {
-        atm_in>>bill>>count;
-        if(bill != 0) 
-            BILLS[bill] = count;
-        std::cout<<"bill: "<<bill<<"   "<<"count: "<<count<<"\n";
-    }
-
-    atm_in.close();
-    CalculateTotalSum();
-    CalculateNumberBills();
-    std::cout<<"Total sum "<<TOTAL_SUM;
+    if (atm_in.is_open()) {
+        std::cout<<"Current status of the ATM:\n";
+        ReadFile(atm_in);
+        atm_in.close();
+        CalculateTotalSum();
+        CalculateNumberBills();
+        std::cout<<"Total sum "<<TOTAL_SUM;
+    } else 
+        std::cout<<"The ATM is empty"; 
             
     while(true) {
-        
         std::string oper;
         std::cout << "\n\nTake money \"-\"     "
         <<"Fill the ATM \"+\"     Exit the program \"q\"\n";
@@ -69,9 +60,14 @@ int main() {
             std::cout<<"Enter the required amount of money: ";
             std::cin >> money;
 
-            if (money <= 0) {
+            if (money < 100) {
                 std::cout<<"\nAn incorrect number has been entered";
                 continue;
+
+            } else if (money % 100 != 0) {
+                std::cout<<"\nThe requested amount is not a multiple of 100";
+                continue;
+                    
             } else if (money > TOTAL_SUM) {
                 std::cout<<"\nThere is not enough money at the ATM.\n"
                 <<"The total amount in the ATM is "<<TOTAL_SUM;
@@ -89,121 +85,51 @@ int main() {
             CalculateTotalSum();
             CalculateNumberBills();
             std::cout<<"Total sum "<<TOTAL_SUM;
-          
-     
+             
         } else if (oper == "+") {
             FillATM();
             GetStatusATM();
             CalculateTotalSum();
             std::cout<<"Total sum "<<TOTAL_SUM;
+
         } else if (oper == "q") {
-            std::ofstream atm_out(path);
+            std::ofstream atm_out(path, std::ios::binary);
             WriteFile(atm_out);
             atm_out.close();
             std::cout<<"\nThe ATM program has been finished";
             return 0;
+
         } else {
             std::cout << "\nIncorrect input";
             continue;
         }
-
-         
     }
- 
-    return 1;
- 
+     
 }
 
 
 
+void ReadFile(std::ifstream& atm) {
 
-
-
-
-
-
-
-
-void WriteFile(std::ofstream & atm_out) {
-
-    for (auto [bill, count] : BILLS)
-        atm_out<<bill<<" "<<count<<"\n";
+    while (!atm.eof()) {
+        int bill, count;
+        atm.read((char*)&bill, sizeof(bill));
+        atm.read((char*)&count, sizeof(count));
+        if(!atm.eof()) {
+            BILLS[bill] = count;
+            std::cout<<"bill: "<<bill<<"   "<<"count: "<<count<<"\n";    
+        }
+    }    
 }
 
 
-bool GetMoney(int request_money) {
+void WriteFile(std::ofstream& atm) {
 
-    int n_5000 = BILLS[bill_5000]; 
-    int give_5000 = 0;
-    if (request_money >= bill_5000 && n_5000 != 0 ) {
-        give_5000 = request_money / bill_5000;
-        if (give_5000 > n_5000) give_5000 = n_5000;
-        request_money -=(give_5000 * bill_5000); 
+    for (auto [bill, count] : BILLS) {
+        atm.write((char*)&bill, sizeof(bill));
+        atm.write((char*)&count, sizeof(count));
     }
-
-    int n_2000 = BILLS[bill_2000]; 
-    int give_2000 = 0;
-    if (request_money >= bill_2000 && n_2000 != 0 ) {
-        give_2000 = request_money / bill_2000;
-        if (give_2000 > n_2000) give_2000 = n_2000;
-        request_money -=(give_2000 * bill_2000); 
-    }
-
-    int n_1000 = BILLS[bill_1000];
-    int give_1000 = 0;
-    if (request_money >= bill_1000 && n_1000 != 0 ) {
-        give_1000 = request_money / bill_1000;
-        if (give_1000 > n_1000) give_1000 = n_1000;
-        request_money -=(give_1000 * bill_1000); 
-    }
-
-    int n_500 = BILLS[bill_500]; 
-    int give_500 =0;
-    if (request_money >= bill_500 && n_500 != 0 ) {
-        give_500 = request_money / bill_500;
-        if (give_500 > n_500) give_500 = n_500;
-        request_money -=(give_500 * bill_500); 
-    }
-
-    int n_200 = BILLS[bill_200];
-    int give_200 = 0; 
-    if (request_money >= bill_200 && n_200 != 0 ) {
-        give_200 = request_money / bill_200;
-        if (give_200 > n_200) give_200 = n_200;
-        request_money -=(give_200 * bill_200); 
-    }
-
-    int B_100 = BILLS[bill_100];
-    int give_100 = 0; 
-    if (request_money >= bill_100 && B_100 != 0 ) {
-        give_100 = request_money / bill_100;
-        if (give_100 > B_100) give_100 = B_100;
-        request_money -=(give_100 * bill_100); 
-    }
-
-    if (request_money == 0) {
-
-        BILLS[bill_5000] -= give_5000; 
-        BILLS[bill_2000] -= give_2000; 
-        BILLS[bill_1000] -= give_1000;
-        BILLS[bill_500] -= give_500; 
-        BILLS[bill_200] -= give_200;
-        BILLS[bill_100] -= give_100;
-
-        std::cout<<"Issuing money: \n";
-        if (give_5000 != 0) std::cout<<give_5000<<" bills of "<<bill_5000<<"   ";
-        if (give_2000 != 0) std::cout<<give_2000<<" bills of "<<bill_2000<<"   "; 
-        if (give_1000 != 0) std::cout<<give_1000<<" bills of "<<bill_1000<<"   ";
-        if (give_500 != 0) std::cout<<give_500<<" bills of "<<bill_500<<"   ";
-        if (give_200 != 0) std::cout<<give_200<<" bills of "<<bill_200<<"   "; 
-        if (give_100 != 0) std::cout<<give_100<<" bills of "<<bill_100;
-
-        return true;
-
-    } else {
-
-        return false;
-    }
+        
 }
 
 
@@ -253,6 +179,44 @@ void GetStatusATM() {
 
 
 
+
+
+bool GetMoney(int request_money) {
+
+    int banknotes[] = {bill_100, bill_200, bill_500, bill_1000, bill_2000, bill_5000};
+    int give_banknotes[6] = {0, 0, 0, 0, 0, 0};
+
+    for (int i = 5; i >= 0; --i) {
+        int banknote = banknotes[i];
+        int count_banknotes = BILLS[banknote];
+        int give = 0;
+
+        if (request_money >= banknote && count_banknotes != 0) {
+            give = request_money / banknote;
+            if (give > count_banknotes) 
+                give = count_banknotes;
+            request_money -= (give * banknote);
+            give_banknotes[i] = give;
+        }
+    }
+
+    if (request_money == 0) {
+        std::cout<<"Issuing money: \n";
+
+        for (int i = 5; i >= 0; --i) {
+            int banknote =  banknotes[i];
+            int count = give_banknotes[i]; 
+            BILLS[banknote] -= count;
+            if (count != 0)
+                std::cout<<count<<" banknotes of "<<banknote<<"   ";   
+        }
+
+        return true;
+
+    } else {
+        return false;
+    }
+}
 
 
 
