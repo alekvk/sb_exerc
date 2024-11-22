@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/pract_exercises/25/tasks/25_1/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\main.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_1\\src\\main.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_1/src/main.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/25/tasks/25_1/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\surg.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_1\\src\\surg.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_1/src/surg.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/surg.cpp.obj"
+}
+]

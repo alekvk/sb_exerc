@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/pract_exercises/25/tasks/25_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\main.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_2\\src\\main.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_2/src/main.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/25/tasks/25_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\cpu.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_2\\src\\cpu.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_2/src/cpu.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/cpu.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/25/tasks/25_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\disk.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_2\\src\\disk.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_2/src/disk.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/disk.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/25/tasks/25_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\gpu.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_2\\src\\gpu.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_2/src/gpu.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/gpu.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/25/tasks/25_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\kbd.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_2\\src\\kbd.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_2/src/kbd.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/kbd.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/25/tasks/25_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\ram.cpp.obj -c C:\\pract_exercises\\25\\tasks\\25_2\\src\\ram.cpp",
+  "file": "C:/pract_exercises/25/tasks/25_2/src/ram.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/ram.cpp.obj"
+}
+]
