@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/pract_exercises/29/tasks/29_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\main.cpp.obj -c C:\\pract_exercises\\29\\tasks\\29_2\\src\\main.cpp",
+  "file": "C:/pract_exercises/29/tasks/29_2/src/main.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/29/tasks/29_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\circle.cpp.obj -c C:\\pract_exercises\\29\\tasks\\29_2\\src\\circle.cpp",
+  "file": "C:/pract_exercises/29/tasks/29_2/src/circle.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/circle.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/29/tasks/29_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\rectangle.cpp.obj -c C:\\pract_exercises\\29\\tasks\\29_2\\src\\rectangle.cpp",
+  "file": "C:/pract_exercises/29/tasks/29_2/src/rectangle.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/rectangle.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/29/tasks/29_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\triangle.cpp.obj -c C:\\pract_exercises\\29\\tasks\\29_2\\src\\triangle.cpp",
+  "file": "C:/pract_exercises/29/tasks/29_2/src/triangle.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/triangle.cpp.obj"
+},
+{
+  "directory": "C:/pract_exercises/29/tasks/29_2/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SurgicalOperationApp.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\SurgicalOperationApp.dir\\output_functions.cpp.obj -c C:\\pract_exercises\\29\\tasks\\29_2\\src\\output_functions.cpp",
+  "file": "C:/pract_exercises/29/tasks/29_2/src/output_functions.cpp",
+  "output": "src/CMakeFiles/SurgicalOperationApp.dir/output_functions.cpp.obj"
+}
+]
