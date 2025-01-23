@@ -39,7 +39,7 @@ public:
 
     shared_ptr_toy(const shared_ptr_toy& t) 
     {
-        toy = new Toy(*t.toy); 
+        toy = t.toy; 
         count = t.count;
         ++*count;
     }
@@ -48,20 +48,27 @@ public:
     {
         if (this == &t) 
             return *this;
-        if (toy != nullptr && *count == 1)
+            
+        if (toy != nullptr && *count == 1) {
             delete toy;
-        --*count;
-        toy = new Toy(*t.toy); 
+            delete count;
+        } else     
+            --*count;
+
+        toy = t.toy; 
         count = t.count;
         ++*count;
         return *this;
     }
-
+    
     void reset() 
     {
-        if (*count == 1) 
+        if (*count == 1) {  
             delete toy;
-        --*count;
+            delete count; 
+        } else 
+            --*count;    
+              
         count = nullptr;
         toy = nullptr;
     }
