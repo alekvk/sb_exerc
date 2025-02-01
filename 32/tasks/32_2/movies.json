@@ -1,0 +1,7 @@
+{
+    "Wolf":{"actors":{"Laura Alden":"Michelle Pfeiffer","Will Randall":"John Nicholson"},"country":"United States","director_film":"Mike Nichols","producers":["Douglas Wick","Neal A. Machlis"],"screenwriters":["Jim Harrison","Wesley Strick"],"studio":"Columbia Pictures","date":"1994"},
+    "Dangerous Liaisons":{"actors":{"Marquise de Merteuil":"Glenn Close","Vicomte de Valmont":"John Malkovich","Madame de Tourvel":"Michelle Pfeiffer"},"country":"United States","director_film":"Stephen Frears","producers":["Norma Heyman","Hank Moonjean"],"screenwriters":["Christopher Hampton"],"studio":"Lorimar Film","date":"1988"},
+    "The Witches of Eastwick":{"actors":{"Daryl Van Horne":"John Nicholson","Jane Spofford":"Susan Sarandon","Sukie Ridgemont":"Michelle Pfeiffer"},"country":"United States","director_film":"George Miller","producers":["Neil Canton","Peter Guber","Jon Peters"],"screenwriters":["Michael Cristofer"],"studio":"Warner Bros","date":"1987"},
+    "Men in Black":{"actors":{"Kevin Brown":"Tommy Lee Jones","James Darrell Edwards":"Will Smith"},"country":"United States","director_film":"Barry Sonnenfeld","producers":["Walter F. Parkes","Laurie MacDonald"],"screenwriters":["Ed Solomon"],"studio":"Columbia Pictures","date":"1997"},
+    "The Fugitive":{"actors":{"Dr. Richard Kimble":"Harrison Ford","Deputy U.S. Marshal Sam Gerard":"Tommy Lee Jones"},"country":"United States","director_film":"Andrew Davis","producers":["Arnold Kopelson"],"screenwriters":["Jeb Stuart","David Twohy"],"studio":"Kopelson Entertainment","date":"1993"}
+}

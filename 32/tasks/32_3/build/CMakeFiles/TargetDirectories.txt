@@ -1,0 +1,3 @@
+C:/pract_exercises/32/tasks/32_3/build/CMakeFiles/Task_32_3.dir
+C:/pract_exercises/32/tasks/32_3/build/CMakeFiles/edit_cache.dir
+C:/pract_exercises/32/tasks/32_3/build/CMakeFiles/rebuild_cache.dir

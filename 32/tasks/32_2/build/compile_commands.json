@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/pract_exercises/32/tasks/32_2/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/32_2.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\32_2.dir\\main.cpp.obj -c C:\\pract_exercises\\32\\tasks\\32_2\\main.cpp",
+  "file": "C:/pract_exercises/32/tasks/32_2/main.cpp",
+  "output": "CMakeFiles/32_2.dir/main.cpp.obj"
+}
+]
