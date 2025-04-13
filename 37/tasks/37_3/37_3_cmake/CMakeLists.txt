@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(calc_37_1 VERSION 0.1 LANGUAGES CXX)
+project(37_3_cmake VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-#set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
@@ -16,43 +16,42 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
-        callermainwindow.h
         callermainwindow.cpp
-        ui_caller.h
-
+        callermainwindow.h
+        tv_control_panel.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(calc_37_1
+    qt_add_executable(37_3_cmake
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET calc_37_1 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#    set_property(TARGET 37_3_cmake APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(calc_37_1 SHARED
+        add_library(37_3_cmake SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(calc_37_1
+        add_executable(37_3_cmake
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(calc_37_1 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(37_3_cmake PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-set_target_properties(calc_37_1 PROPERTIES
+set_target_properties(37_3_cmake PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(calc_37_1)
+    qt_finalize_executable(37_3_cmake)
 endif()

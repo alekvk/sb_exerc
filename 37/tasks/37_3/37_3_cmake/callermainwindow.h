@@ -1,10 +1,13 @@
-#pragma once
-#include <QMainWindow>
-#include <QtWidgets/QLineEdit>
-#include "./ui_tv_control.h"
-
 #ifndef CALLERMAINWINDOW_H
 #define CALLERMAINWINDOW_H
+
+#include <QMainWindow>
+#include <QtWidgets/QLineEdit>
+
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class TVControlPanel; }
+QT_END_NAMESPACE
 
 
 class CallerMainWindow : public QMainWindow
@@ -39,3 +42,4 @@ private:
 };
 
 #endif // CALLERMAINWINDOW_H
+

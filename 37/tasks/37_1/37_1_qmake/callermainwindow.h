@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CALLERMAINWINDOW_H
+#define CALLERMAINWINDOW_H
 
 #include <QMainWindow>
 #include <QtWidgets/QLCDNumber>
@@ -30,3 +31,6 @@ private:
     bool checkIsNums(double& n1, double& n2);
 
 };
+
+#endif // CALLERMAINWINDOW_H*/
+

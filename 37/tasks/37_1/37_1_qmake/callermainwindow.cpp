@@ -48,3 +48,5 @@ bool CallerMainWindow::checkIsNums(double& n1, double& n2)
 
     return result;
 }
+
+

@@ -1,6 +1,6 @@
 #include <QApplication>
 #include "callermainwindow.h"
-
+#include "ui_tv_control_panel.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,3 +19,4 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+
