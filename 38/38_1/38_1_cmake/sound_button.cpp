@@ -18,6 +18,11 @@ SoundButton::SoundButton(QWidget* parent)
     QObject::connect (this, &QPushButton::clicked, this, &SoundButton::setDown);
 }
 
+SoundButton::~SoundButton()
+{
+    delete player;
+}
+
 void SoundButton::paintEvent(QPaintEvent* e)
 {
     QPainter p(this);

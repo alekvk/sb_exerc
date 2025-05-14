@@ -19,6 +19,8 @@ public:
     SoundButton() = default;
     SoundButton (QWidget* parent);
 
+    ~SoundButton();
+
     void paintEvent(QPaintEvent* e) override;
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
